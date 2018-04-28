@@ -20,7 +20,7 @@ static union data_out_union data_out;
 
 //**********************************************************
 
-void data_out_channel_add_value(int value, int sensor_number, int value_index);
+void data_out_channel_add_value(int value, int sensor_number, int frame_index);
 void data_out_channel_flush_data();
 
 
