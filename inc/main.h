@@ -13,7 +13,10 @@
 #include <math.h>
 
 #define SIZEOFINT 4
-#define NUMBER_OF_SENSORS 8
 #define LENGTH_OF_FRAME 20
+
+static struct timespec sleep_interval;
+static struct timespec long_sleep_interval;
+
 
 #endif
