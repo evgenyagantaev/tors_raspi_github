@@ -17,7 +17,7 @@ int main()
 	{
 		printf("\nbcm2835 initialization successful\n");
 		
-		bcm2835_gpio_fsel(DEBUG_PIN_0, BCM2835_GPIO_FSEL_OUTP);
+		gpio_init();
 
 		while(1)
 	    {

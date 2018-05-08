@@ -11,7 +11,7 @@
 
 #define DEBUG_PIN_0 RPI_BPLUS_GPIO_J8_40
 
-
+void gpio_init();
 void gpio_debug_pin_set();
 void gpio_debug_pin_reset();
 
