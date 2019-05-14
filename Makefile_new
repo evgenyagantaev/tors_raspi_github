@@ -40,6 +40,7 @@ BUILD_DIR = build
 # C sources
 C_SOURCES =  \
 src/main_scheduler_obj.c \
+src/spi_interface_obj.c \
 src/gpio_obj.c 
 
 

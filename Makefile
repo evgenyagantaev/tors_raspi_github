@@ -6,6 +6,7 @@ SRC_PATH=src/
 
 C_SRC = \
 $(SRC_PATH)main_scheduler_obj.c \
+src/spi_interface_obj.c \
 $(SRC_PATH)gpio_obj.c
 
 INC_PATH = inc/
@@ -34,6 +35,8 @@ $(TARGET): $(OBJECTS)
 $(OBJ_PATH)main_scheduler_obj.o: $(SRC_PATH)main_scheduler_obj.c   $(INC_PATH)main.h
 	$(CC) -c $(CFLAGS) $< -o $@
 $(OBJ_PATH)gpio_obj.o: $(SRC_PATH)gpio_obj.c  $(INC_PATH)main.h $(INC_PATH)gpio_obj.h
+	$(CC) -c $(CFLAGS) $< -o $@
+$(OBJ_PATH)spi_interface_obj.o: $(SRC_PATH)spi_interface_obj.c  $(INC_PATH)spi_interface_obj.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
