@@ -24,7 +24,7 @@ int main()
 		while(1)
 	    {
 
-			//*
+			/*
 	    	// set debug pin
 	    	gpio_debug_pin_set();
 	    	// pause (1 msec)
@@ -37,6 +37,15 @@ int main()
 			//*/
 
 
+			uint8_t i;
+
+			for(i=0; i<4; i++)
+			{
+				// set i-th chipselect
+				set_address(i);
+	        	nanosleep(&long_sleep_interval, NULL);
+
+			}
 
 
 		}
