@@ -39,27 +39,83 @@ int main()
 
 			uint8_t i;
 			
-			/*
-			for(i=0; i<4; i++)
-			{
-				// set i-th chipselect
-				set_address(i);
-	        	nanosleep(&long_sleep_interval, NULL);
+#define DATA_LENGTH 3000
+#define NUMBER_OF_CHANNELS 4
 
-			}
-			*/
+			int16_t data_array[NUMBER_OF_CHANNELS][DATA_LENGTH];
+			int j;
+
+			uint8_t ms_byte;
+			uint8_t ls_byte;
+			uint16_t data_sample;
 
 			i = 0x03;
 			set_address(i);
+			// read data from i-th MC
+			for(j=0; j<DATA_LENGTH; j++)
+			{
+				 ms_byte = bcm2835_spi_transfer(0x55);// read ms byte
+				 ls_byte = bcm2835_spi_transfer(0x55);// read ls byte
+
+				 data_sample = 0;
+				 data_sample += ms_byte;
+				 data_sample <<= 8;
+				 data_sample += ls_byte;
+				 data_array[i][j] = (int16_t)data_sample;
+
+			}
+			chipselhigh();
 	        nanosleep(&long_sleep_interval, NULL);
 			i = 0x06;
 			set_address(i);
+			// read data from i-th MC
+			for(j=0; j<DATA_LENGTH; j++)
+			{
+				 ms_byte = bcm2835_spi_transfer(0x55);// read ms byte
+				 ls_byte = bcm2835_spi_transfer(0x55);// read ls byte
+
+				 data_sample = 0;
+				 data_sample += ms_byte;
+				 data_sample <<= 8;
+				 data_sample += ls_byte;
+				 data_array[i][j] = (int16_t)data_sample;
+
+			}
+			chipselhigh();
 	        nanosleep(&long_sleep_interval, NULL);
 			i = 0x00;
 			set_address(i);
+			// read data from i-th MC
+			for(j=0; j<DATA_LENGTH; j++)
+			{
+				 ms_byte = bcm2835_spi_transfer(0x55);// read ms byte
+				 ls_byte = bcm2835_spi_transfer(0x55);// read ls byte
+
+				 data_sample = 0;
+				 data_sample += ms_byte;
+				 data_sample <<= 8;
+				 data_sample += ls_byte;
+				 data_array[i][j] = (int16_t)data_sample;
+
+			}
+			chipselhigh();
 	        nanosleep(&long_sleep_interval, NULL);
 			i = 0x05;
 			set_address(i);
+			// read data from i-th MC
+			for(j=0; j<DATA_LENGTH; j++)
+			{
+				 ms_byte = bcm2835_spi_transfer(0x55);// read ms byte
+				 ls_byte = bcm2835_spi_transfer(0x55);// read ls byte
+
+				 data_sample = 0;
+				 data_sample += ms_byte;
+				 data_sample <<= 8;
+				 data_sample += ls_byte;
+				 data_array[i][j] = (int16_t)data_sample;
+
+			}
+			chipselhigh();
 	        nanosleep(&long_sleep_interval, NULL);
 
 		}
