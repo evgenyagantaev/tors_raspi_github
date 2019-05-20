@@ -38,7 +38,8 @@ int main()
 
 
 			uint8_t i;
-
+			
+			/*
 			for(i=0; i<4; i++)
 			{
 				// set i-th chipselect
@@ -46,7 +47,20 @@ int main()
 	        	nanosleep(&long_sleep_interval, NULL);
 
 			}
+			*/
 
+			i = 0x03;
+			set_address(i);
+	        nanosleep(&long_sleep_interval, NULL);
+			i = 0x06;
+			set_address(i);
+	        nanosleep(&long_sleep_interval, NULL);
+			i = 0x00;
+			set_address(i);
+	        nanosleep(&long_sleep_interval, NULL);
+			i = 0x05;
+			set_address(i);
+	        nanosleep(&long_sleep_interval, NULL);
 
 		}
 
